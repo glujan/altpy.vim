@@ -21,7 +21,8 @@ function! FileName() abort
     let path=substitute(fileName, "^" . g:altpy_src_dir, g:altpy_test_dir, "")
     let altFile = path . "_test.py"
   else
-    echom "Could not find alternate file"
+    echoerr "Could not find alternate file"
+    let altFile = ""
   endif
 
   return altFile
