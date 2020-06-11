@@ -1,0 +1,21 @@
+*altpy.txt* Quickly alternate between source and tests files
+
+Author:     glujan <https://github.com/glujan/altpy.vim>
+
+|altpy-navigation|              Navigation
+|altpy-configuration|           Configuration
+
+NAVIGATION                      *altpy-navigation*
+
+        *altpy-:A* *altpy-:AE* *altpy-:AS* *altpy-:AV* *altpy-:AT*
+:A			These commands were picked to mimic Tim's Pope vim-rails.
+:AE			Briefly, they edit the "alternate" file, in either the
+:AS			same window (:A and :AE), a new split window (:AS), a
+:AV			new vertically split window (:AV), a new tab (:AT).
+:AT
+
+CONFIGURATION                   *altpy-configuration*
+>
+  let g:altpy_test_dir = "tests/unit/"
+  let g:altpy_src_dir = "src/"
+<
