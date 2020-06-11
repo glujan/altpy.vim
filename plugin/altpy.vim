@@ -10,11 +10,7 @@ let g:loaded_altpy = 1
 let g:altpy_test_dir = "tests/unit/"
 let g:altpy_src_dir = "src/"
 
-function! OpenAlt(cmd) abort
-  if stridx(expand("%"), ".py") == -1
-    return
-  endif
-
+function! FileName() abort
   let fileName=expand("%:r")
 
   if fileName =~ "^" . g:altpy_test_dir
@@ -25,11 +21,18 @@ function! OpenAlt(cmd) abort
     let path=substitute(fileName, "^" . g:altpy_src_dir, g:altpy_test_dir, "")
     let altFile = path . "_test.py"
   else
-      echom "jeszce co innego"
-      return
+    echom "Could not find alternate file"
   endif
 
-  execute "normal! :" . a:cmd . " " . altFile ."\<cr>"
+  return altFile
+endfunction
+
+function! OpenAlt(cmd) abort
+  if stridx(expand("%"), ".py") == -1
+    return
+  endif
+
+  execute "normal! :" . a:cmd . " " . FileName() ."\<cr>"
 endfunction
 
 command! A  :call OpenAlt("edit")
