@@ -3,7 +3,6 @@
 Author:     glujan <https://github.com/glujan/altpy.vim>
 
 |altpy-navigation|              Navigation
-|altpy-configuration|           Configuration
 
 NAVIGATION                      *altpy-navigation*
 
@@ -13,9 +12,3 @@ NAVIGATION                      *altpy-navigation*
 :AS			same window (:A and :AE), a new split window (:AS), a
 :AV			new vertically split window (:AV), a new tab (:AT).
 :AT
-
-CONFIGURATION                   *altpy-configuration*
->
-  let g:altpy_test_dir = "tests/unit/"
-  let g:altpy_src_dir = "src/"
-<

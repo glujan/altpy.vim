@@ -1,38 +1,34 @@
 # altpy.vim
 
 This is a simplistic plugin to easily alternate between Python source and test
-files. Currently it works only for projects which tree look similar to this one:
+files. It works for projects which tree looks similar to this one:
 ```
 .
 ├── src
-│   └── your_module.py
+│   ├── your_module.py
+│   └── package
+|       └── other_module.py
 └── tests
     ├── __init__.py
-    └── unit
-        ├── __init__.py
-        └── your_module_test.py
+    ├── your_module_test.py
+    └── package
+        └── test_other_module.py
 ```
 
-This means tests are expected to be in a separate directory, have `_test` suffix
+This means tests are expected to be in a separate directory, have `test_` prefix or`_test` suffix
 and mimic source files structure.
+
+If an exact alternate file is not found the closest directory is opened instead.
 
 ## Instalation
 
-If you are using junegunn/vim-plug:
+If you are using [junegunn/vim-plug](https://github.com/junegunn/vim-plug):
 ```
 Plug 'glujan/altpy.vim', {'for': 'python'}
-```
-
-## Configuration
-Configuration is global but this might change in the future. Currently there are
-two options settings:
-```
-let g:altpy_test_dir = "tests/unit/"
-let g:altpy_src_dir = "src/"
 ```
 
 ## Roadmap
 - [x] Support separete src and tests directories
 - [ ] Per-project configuration
-- [ ] Support Django-style tests directories
-- [ ] Support different test files naming conventions (ie. prefix `test_`)
+- [x] Support Django-style tests directories
+- [x] Support different test files naming conventions (ie. prefix `test_`)
