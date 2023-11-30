@@ -20,6 +20,8 @@ and mimic source files structure.
 
 If an exact alternate file is not found the closest directory is opened instead.
 
+To see available commands, run `help altpy` in your VIM or see [doc/altpy.txt](doc/altpy.txt).
+
 ## Instalation
 
 If you are using [junegunn/vim-plug](https://github.com/junegunn/vim-plug):
